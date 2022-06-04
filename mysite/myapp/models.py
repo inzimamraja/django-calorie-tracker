@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Food(models.Model):
+    Objects = None
 
     def __str__(self):
         return self.name
@@ -16,5 +17,6 @@ class Food(models.Model):
 
 
 class Consume(models.Model):
+    Objects = None
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     food_consumed = models.ForeignKey(Food, on_delete=models.CASCADE)
